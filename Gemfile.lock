@@ -148,6 +148,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap-sass (~> 3.3.4)
   byebug
   coffee-rails (~> 4.1.0)
@@ -161,3 +162,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6
