@@ -21,6 +21,11 @@
           <%= f.label :guests, "Número de Huéspedes" %>
           <%= f.number_field :guests, class: 'form-control input-lg' %>
         </div>
+        
+        <div class="form-group">
+          <%= f.label :price_per_night, "Precio por noche (Dolares)" %>
+          <%= f.number_field :price_per_night, :step => 0.01, class: 'form-control input-lg', placeholder: "USD"  %>
+        </div>
 
         <div class="form-group">
           <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen" %>
