@@ -16,7 +16,7 @@ class Room < ActiveRecord::Base
 
 
 validates :title,
-			presence: { message: "falta el titulo" }
+			presence: true
 
 
 validates :description, 
