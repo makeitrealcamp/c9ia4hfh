@@ -34,7 +34,7 @@ validates :guests, presence: {message: "guest no puede estar en blanco"},
 		  numericality: { only_integer: true, message: "guests no es un numero" }
 			#message: ''
 
-validates :image_url, presence: {message: "El URL de la imagen no puede estar en blanco"},
+validates :image_url, presence: {message: "El URL de la imagen no puede estar en blanco"}
 			#message: ''
 
 end
