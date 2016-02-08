@@ -21,7 +21,7 @@ validates :title,
 
 validates :description, 
 		  presence: true,
-		  length: {maximum: 400, message: "la descripción es muy larga"}
+		  length: {maximum: 400}
 		   
 
 
