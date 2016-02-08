@@ -20,7 +20,7 @@ validates :title,
 
 
 validates :description, 
-		  presence: { message: "falta la descripcion" },
+		  presence: true,
 		  length: {maximum: 400, message: "la descripción es muy larga"}
 		   
 
@@ -32,9 +32,9 @@ validates :beds, presence: {message: "bed no puede estar en blanco"},
 
 validates :guests, presence: {message: "guest no puede estar en blanco"},
 		  numericality: { only_integer: true, message: "guests no es un numero" }
-			#message: ''
+			
 
 validates :image_url, presence: {message: "El URL de la imagen no puede estar en blanco"}
-			#message: ''
+			
 
 end
