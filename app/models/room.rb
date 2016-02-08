@@ -25,16 +25,16 @@ validates :description,
 		   
 
 
-validates :beds, presence: {message: "bed no puede estar en blanco"},
-		  numericality: { only_integer: true, message: "bed no es un numero"}
+validates :beds, presence: true,
+		  numericality: { only_integer: true}
 			
 
 
-validates :guests, presence: {message: "guest no puede estar en blanco"},
-		  numericality: { only_integer: true, message: "guests no es un numero" }
+validates :guests, presence: true,
+		  numericality: { only_integer: true}
 			
 
-validates :image_url, presence: {message: "El URL de la imagen no puede estar en blanco"}
+validates :image_url, presence: true
 			
 
 end
