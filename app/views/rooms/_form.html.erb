@@ -5,25 +5,25 @@
 
       <%= form_for @room do |f| %>
         <div class="form-group">
-          <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
+          <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título", :required => true %>
         </div>
 
         <div class="form-group">
-          <%= f.text_area :description, class: 'form-control input-lg', placeholder: "Descripción" %>
+          <%= f.text_area :description, class: 'form-control input-lg', placeholder: "Descripción", :required => true, :maxlength => 400  %>
         </div>
 
         <div class="form-group">
           <%= f.label :beds, "Número de Camas" %>
-          <%= f.number_field :beds, class: 'form-control input-lg col-sm-2' %>
+          <%= f.number_field :beds, class: 'form-control input-lg col-sm-2', :required => true %>
         </div>
 
         <div class="form-group">
           <%= f.label :guests, "Número de Huéspedes" %>
-          <%= f.number_field :guests, class: 'form-control input-lg' %>
+          <%= f.number_field :guests, class: 'form-control input-lg', :required => true %>
         </div>
 
         <div class="form-group">
-          <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen" %>
+          <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen", :required => true %>
         </div>
 
         <div class="actions text-right">
