@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
-      <h1><%= edDel %></h1>
 
       <% if @room.errors.any? %>
       <div class="alert alert-danger">
@@ -44,7 +43,6 @@
 
       <div class="actions text-right">
         <%= f.submit @room.new_record? ? "Crear Habitación" : "Editar Habitación", class: "btn btn-primary btn-lg btn-block" %>
-        <h1><%= edDel %></h1>
       </div>
       <% end %>
     </div>
