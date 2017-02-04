@@ -1,8 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
+      <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
+      
+      <% if @room.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% @room.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
       <%= form_for @room do |f| %>
         <div class="form-group">
           <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
@@ -20,6 +31,11 @@
         <div class="form-group">
           <%= f.label :guests, "Número de Huéspedes" %>
           <%= f.number_field :guests, class: 'form-control input-lg' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :price_per_night, "Precio por noche (Dolares)" %>
+          <%= f.number_field :price_per_night, :step => 0.01, class: 'form-control input-lg', placeholder: "USD"  %>
         </div>
 
         <div class="form-group">
