@@ -15,13 +15,17 @@
               </ul>
           </div>
         <% end %>
-        
+
         <div class="form-group">
           <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
         </div>
 
         <div class="form-group">
           <%= f.text_area :description, class: 'form-control input-lg', placeholder: "Descripción" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :price_per_night, class: 'form-control input-lg', placeholder: "Precio por noche" %>
         </div>
 
         <div class="form-group">
