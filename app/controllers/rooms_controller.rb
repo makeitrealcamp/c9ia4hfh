@@ -18,6 +18,6 @@ class RoomsController < ApplicationController
 
   protected
     def room_params
-      params.require(:room).permit(:title, :description, :beds, :guests, :image_url)
+      params.require(:room).permit(:title, :description, :beds, :guests, :image_url, :price_per_night)
     end
 end
