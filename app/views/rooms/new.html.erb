@@ -1,1 +1,9 @@
 <%= render 'form' %>
+<% if @errors %>
+  <h3>Habitacion invalida</h3>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
