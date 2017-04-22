@@ -17,6 +17,22 @@ class RoomsController < ApplicationController
     end
   end
 
+
+  def edit
+    @room = Room.find(params[:id])
+  end
+
+
+  def update
+    room = Room.find(params[:id])
+    room.update(room_params)
+    if room.save()
+      redirect_to rooms_path, :notice => "La Habitacion ha sido modificada";
+   else
+      render "edit";
+   end
+end
+
   
 
   protected
