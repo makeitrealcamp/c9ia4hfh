@@ -1,6 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+
+      <% if @errors %>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
       <%= form_for @room do |f| %>
