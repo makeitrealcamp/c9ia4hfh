@@ -21,7 +21,21 @@ class RoomsController < ApplicationController
     end
   end
 
+  def update
+    @room = Room.find(params[:id])
+    if @room.update(room_params)
+      redirect_to rooms_path
+    else
+      render 'edit'
+    end
+  end
 
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+ 
+    redirect_to rooms_path
+  end
 
   protected
     def room_params
