@@ -19,6 +19,25 @@ class RoomsController < ApplicationController
 
   end
 
+  def edit
+    begin
+      @room = Room.find(params[:id])
+    rescue ActiveRecordNotFound
+      redirect_to(rooms_path)
+    end
+  end
+
+  def update
+    @room = Room.find(params[:id])
+
+    if @room.update(room_params)
+      redirect_to(rooms_path)
+    else
+      render 'rooms/edit'
+    end
+  end
+
+
   protected
     def room_params
       params.require(:room).permit(:title, :description, :beds, :guests, :image_url, :price_per_night)
