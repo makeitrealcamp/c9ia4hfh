@@ -37,6 +37,10 @@ class RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @room = Room.destroy(params[:id])
+    redirect_to(rooms_path)
+  end
 
   protected
     def room_params
