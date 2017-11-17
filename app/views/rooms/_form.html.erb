@@ -26,7 +26,8 @@
           <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen" %>
         </div>
         <div class="form-group">
-          <%= f.text_field :price_per_night, class: 'form-control input-lg', placeholder: "Precio por noche" %>
+          <%= f.label :price_per_night, "Precio por noche" %>
+          <%= f.number_field :price_per_night, class: 'form-control input-lg' %>
         </div>
 
         <div class="actions text-right">
