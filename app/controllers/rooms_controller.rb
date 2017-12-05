@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
       render :new
     end
   end
+  
 
   protected
     def room_params
