@@ -35,6 +35,10 @@
           <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen" %>
         </div>
 
+        <div class="form-group">
+          <%= f.number_field :price_per_night, class: 'form-control input-lg', :step => 0.01, placeholder: "Price Per Night" %>
+        </div>
+
         <div class="actions text-right">
           <%= f.submit @room.new_record? ? "Crear Habitación" : "Editar Habitación", class: "btn btn-primary btn-lg btn-block" %>
         </div>
