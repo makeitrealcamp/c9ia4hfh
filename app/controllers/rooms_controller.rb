@@ -29,7 +29,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     room = Room.find(params[:id])
     room.destroy
     redirect_to rooms_path
