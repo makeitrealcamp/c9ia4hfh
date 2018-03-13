@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path, notice: "El actor fue publicado con éxito"
+      redirect_to rooms_path, notice: "publicado"
     else
       render :new
     end
