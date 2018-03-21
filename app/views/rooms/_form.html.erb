@@ -1,11 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+       <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@room.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @room.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
       <%= form_for @room do |f| %>
         <div class="form-group">
           <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :price_per_night, class: 'form-control input-lg', placeholder: "price_per_night" %>
         </div>
 
         <div class="form-group">
