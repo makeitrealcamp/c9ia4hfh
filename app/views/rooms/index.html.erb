@@ -23,6 +23,10 @@
                   <div class="number-value"><%= room.guests %></div>
                   <div class="number-label">Huéspedes</div>
                 </div>
+                <div class="number">
+                  <div class="number-value"><%= room.price_per_night %></div>
+                  <div class="number-label">Precio por noche</div>
+                </div>
                 <div class="actions">
                   <%= link_to "<span class='glyphicon glyphicon-pencil'><span>".html_safe, edit_room_path(room), class: "edit-room-btn" %>
                   <%= link_to "<span class='glyphicon glyphicon-trash'><span>".html_safe, room, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }, class: "destroy-room-btn" %>
