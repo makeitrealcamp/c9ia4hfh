@@ -10,10 +10,17 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path
+      redirect_to rooms_path, notice: 'Habitación añadida correctamente.'
     else
-      render :new
+      redirect_to new_room_path, alert: 'No se pudo crear la nueva habitación.'
     end
+
+  end
+
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to rooms_path
   end
 
   protected
