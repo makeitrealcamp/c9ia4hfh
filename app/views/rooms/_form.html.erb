@@ -4,26 +4,44 @@
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
       <%= form_for @room do |f| %>
-        <div class="form-group">
-          <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
-        </div>
+
 
         <div class="form-group">
+          <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
+          <%if @room.errors.include?(:title)%>
+             <%= name_errors = @room.errors[:title]%>
+          <%end%>
+        </div>
+        
+       
+        <div class="form-group">
           <%= f.text_area :description, class: 'form-control input-lg', placeholder: "Descripción" %>
+          <%if @room.errors.include?(:description)%>
+             <%= name_errors = @room.errors[:description]%>
+          <%end%>
         </div>
 
         <div class="form-group">
           <%= f.label :beds, "Número de Camas" %>
           <%= f.number_field :beds, class: 'form-control input-lg col-sm-2' %>
+          <%if @room.errors.include?(:beds)%>
+             <%= name_errors = @room.errors[:beds]%>
+          <%end%>
         </div>
 
         <div class="form-group">
           <%= f.label :guests, "Número de Huéspedes" %>
           <%= f.number_field :guests, class: 'form-control input-lg' %>
+          <%if @room.errors.include?(:guests)%>
+             <%= name_errors = @room.errors[:guests]%>
+          <%end%>
         </div>
 
         <div class="form-group">
           <%= f.text_field :image_url, class: 'form-control input-lg', placeholder: "URL de Imagen" %>
+          <%if @room.errors.include?(:image_url)%>
+             <%= name_errors = @room.errors[:image_url]%>
+          <%end%>
         </div>
 
         <div class="actions text-right">
