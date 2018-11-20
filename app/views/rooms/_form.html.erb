@@ -44,6 +44,14 @@
           <%end%>
         </div>
 
+        <div class="form-group">
+          <%= f.text_field :price_per_night, class: 'form-control input-lg', placeholder: "Price per night" %>
+          <%if @room.errors.include?(:price_per_night)%>
+             <%= name_errors = @room.errors[:price_per_night]%>
+          <%end%>
+        </div>
+        
+
         <div class="actions text-right">
           <%= f.submit @room.new_record? ? "Crear Habitación" : "Editar Habitación", class: "btn btn-primary btn-lg btn-block" %>
         </div>
