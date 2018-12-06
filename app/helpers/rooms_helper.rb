@@ -1,5 +1,5 @@
 module RoomsHelper
-	def form_title
+	def new_title
 		@room.new_record? ? "Crear Habitacion" : "Editar Habitacion"
 	end
 end

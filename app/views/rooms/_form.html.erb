@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
       <%= form_for @room do |f| %>
         <div class="form-group">
@@ -23,8 +22,8 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :price_per_night, "Precio Habitacion" %>
-          <%= f.number_field :price_per_night, class: 'form-control input-lg' %>
+          <%= f.label :price_per_night, "Precio por noche" %>
+          <%= f.number_field :price_per_night, class: 'form-control input-lg', placeholder:"Precio por noche" %>
         </div>
 
         <div class="form-group">
