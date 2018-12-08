@@ -10,9 +10,9 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
-      redirect_to rooms_path, notice: 'Habitación añadida correctamente.'
+      redirect_to rooms_path#, notice: 'Habitación añadida correctamente.'
     else
-      redirect_to new_room_path, alert: 'No se pudo crear la nueva habitación.'
+      render :new#, alert: 'No se pudo crear la nueva habitación.'
     end
 
   end
