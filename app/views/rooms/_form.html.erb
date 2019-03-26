@@ -6,20 +6,25 @@
       <%= form_for @room do |f| %>
         <div class="form-group">
           <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
+          <label class="errors"><%= "Falta el título" if @room.errors.include?(:title) %></label>
         </div>
 
         <div class="form-group">
           <%= f.text_area :description, class: 'form-control input-lg', placeholder: "Descripción" %>
+          <label class="errors"><%= "La descripción es muy larga" if @room.errors.include?(:description) %></label>
+
         </div>
 
         <div class="form-group">
           <%= f.label :beds, "Número de Camas" %>
           <%= f.number_field :beds, class: 'form-control input-lg col-sm-2' %>
+          <label class="errors"><%= "Beds no es un número" if @room.errors.include?(:beds) %></label>
         </div>
 
         <div class="form-group">
           <%= f.label :guests, "Número de Huéspedes" %>
           <%= f.number_field :guests, class: 'form-control input-lg' %>
+          <label class="errors"><%= "Guests no es un número" if @room.errors.include?(:guests) %></label>
         </div>
 
         <div class="form-group">
@@ -29,6 +34,7 @@
         <div class="actions text-right">
           <%= f.submit @room.new_record? ? "Crear Habitación" : "Editar Habitación", class: "btn btn-primary btn-lg btn-block" %>
         </div>
+        
       <% end %>
     </div>
   </div>
