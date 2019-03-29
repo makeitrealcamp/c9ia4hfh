@@ -3,6 +3,16 @@
     <div class="col-sm-6 col-sm-offset-3">
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
+      <% if @errors%>
+
+         <ul>
+         <% @errors.each do |error| %>
+           <li><%= error %></li>
+         <% end %>
+         </ul>
+       
+      <% end %>
+
       <%= form_for @room do |f| %>
         <div class="form-group">
           <%= f.text_field :title, class: 'form-control input-lg', placeholder: "Título" %>
