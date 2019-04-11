@@ -35,7 +35,9 @@ class RoomsController < ApplicationController
     room = Room.find(params[:id])
     room.destroy
 
+
     redirect_to rooms_path
+    
   end
 
   protected
