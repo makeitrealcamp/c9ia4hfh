@@ -13,6 +13,7 @@
 #
 
 class Room < ActiveRecord::Base
+  validates :price_per_night, numericality: true, presence: true
   validates :title, presence: true
   validates :description, presence: true
   validates :beds, presence: true
