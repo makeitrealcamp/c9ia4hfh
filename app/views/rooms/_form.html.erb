@@ -18,6 +18,11 @@
         </div>
 
         <div class="form-group">
+         <%= f.label :price_per_night, "Precio por Noche" %>
+         <%= f.number_field :price_per_night, class: 'form-control input-lg' %>
+       </div>
+
+        <div class="form-group">
           <%= f.label :guests, "Número de Huéspedes" %>
           <%= f.number_field :guests, class: 'form-control input-lg' %>
         </div>
