@@ -82,4 +82,88 @@
       &:hover .actions { display: block; }
     }
   }
+}.rooms {
+  header {
+    position: relative;
+
+    a.new-room {
+      position: absolute;
+      top: 4px;
+      right: 0;
+    }
+  }
+
+  .rooms-list {
+    margin-top: 20px;
+
+    .room {
+      position: relative;
+      background: white;
+      border: 1px solid #dfdfdf;
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+      }
+
+      .details {
+        padding: 15px 20px 10px;
+
+        @media (min-width: $screen-sm-min) { padding: 15px 10px 10px 0; }
+        @media (min-width: $screen-lg-min) { padding: 20px; }
+
+        h3 {
+          font-size: 21px;
+          font-weight: 300;
+          margin: 0 0 10px;
+
+          @media (min-width: $screen-md-min) { margin-bottom: 15px; }
+          @media (min-width: $screen-lg-min) {
+            font-size: 24px;
+            margin-bottom: 25px;
+          }
+        }
+        .description {
+          color: #666;
+          font-size: 14px;
+          font-weight: 300;
+          margin-bottom: 10px;
+
+          @media (min-width: $screen-md-min) {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+          @media (min-width: $screen-lg-min) { margin-bottom: 25px; }
+        }
+
+        .number {
+          float: left;
+          text-align: center;
+          margin-right: 50px;
+
+          .number-value {
+            color: #999;
+            font-size: 18px;
+            line-height: 1.1;
+            font-weight: bold;
+
+            @media (min-width: $screen-md-min) { font-size: 24px; }
+          }
+          .number-label { color: #999; }
+        }
+
+        .actions {
+          display: none;
+          position: absolute;
+          bottom: 10px;
+          right: 30px;
+          font-size: 18px;
+
+          a { margin-right: 10px;}
+        }
+      }
+
+      &:hover .actions { display: block; }
+    }
+  }
 }
