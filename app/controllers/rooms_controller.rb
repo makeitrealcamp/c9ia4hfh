@@ -7,15 +7,6 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
-  def create
-    @room = Room.new(room_params)
-    if @room.save
-      redirect_to rooms_path
-    else
-      render :new
-    end
-  end
-
   def edit
     @room = Room.find(params[:id])
   end
@@ -23,7 +14,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
-      redirect_to '/rooms'
+      redirect_to rooms_path, notice:"La habitación fue cambiada"
     else
       render 'edit'
     end
@@ -33,7 +24,16 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @room.destroy
 
-    redirect_to '/rooms'
+    redirect_to rooms_path, notice: "La habitación se eliminó"
+  end
+
+  def create
+    @room = Room.new(room_params)
+    if @room.save
+      redirect_to rooms_path
+    else
+      render :new
+    end
   end
 
   protected
