@@ -12,9 +12,16 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to rooms_path
     else
+      @errors = @room.errors.full_message
       render :new
     end
   end
+
+  def destroy
+   room = Room.find(params[:id])
+   room.destroy
+   redirect_to rooms_path
+ end
 
   protected
     def room_params
